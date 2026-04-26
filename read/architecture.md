@@ -47,8 +47,8 @@ flowchart TB
   ModeSwitch --> Bridge[src/bridge<br/>Remote Control / Bridge]:::remote
   ModeSwitch --> ACP[src/services/acp + packages/acp-link<br/>Agent Client Protocol]:::remote
   ModeSwitch --> Daemon[src/daemon<br/>常驻 supervisor / worker]:::remote
-  ModeSwitch --> ComputerUse[packages/@ant/computer-use-*<br/>截图、键鼠、系统集成]:::pkg
-  ModeSwitch --> ChromeMcp[packages/@ant/claude-for-chrome-mcp<br/>Chrome 控制 MCP]:::pkg
+  ModeSwitch --> ComputerUse["packages/@ant/computer-use-*<br/>截图、键鼠、系统集成"]:::pkg
+  ModeSwitch --> ChromeMcp["packages/@ant/claude-for-chrome-mcp<br/>Chrome 控制 MCP"]:::pkg
   Bridge --> RCS[packages/remote-control-server<br/>自托管 RCS + React Web UI]:::remote
   Build[build.ts / scripts/defines.ts<br/>Bun build、宏注入、feature flags、Node 兼容产物]:::core -.产物.-> CLI
 ```
@@ -178,7 +178,7 @@ Provider 选择由 `src/utils/model/providers.ts` 统一处理，优先级是：
 %%{init: {"theme":"base", "themeVariables": {"background":"#fffaf5", "primaryColor":"#fff3ea", "primaryTextColor":"#2f2926", "primaryBorderColor":"#d77757", "lineColor":"#8b6f63", "secondaryColor":"#eef2ff", "tertiaryColor":"#fff8dc", "fontFamily":"Inter, ui-sans-serif, system-ui"}}}%%
 flowchart TB
   Internal[内部消息模型<br/>Message + Tool + SystemPrompt] --> ClaudeAPI[src/services/api/claude.ts]
-  ClaudeAPI --> Select{getAPIProvider()}
+  ClaudeAPI --> Select{"getAPIProvider()"}
   Select --> FP[First-party Anthropic SDK]
   Select --> BR[Bedrock Adapter]
   Select --> VX[Vertex Adapter]
